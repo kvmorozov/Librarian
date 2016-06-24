@@ -60,7 +60,7 @@ public class MainFormController extends UI {
         // Replace listing with filtered content when user changes filter
         filter.addTextChangeListener(e -> listEntries(e.getText()));
 
-        // Connect selected Customer to editor or hide if none is selected
+        // Connect selected Entry to editor or hide if none is selected
         grid.addSelectionListener(e -> {
             if (e.getSelected().isEmpty()) {
                 editor.setVisible(false);
@@ -69,7 +69,7 @@ public class MainFormController extends UI {
             }
         });
 
-        // Instantiate and edit new Customer the new button is clicked
+        // Instantiate and edit new Entry the new button is clicked
         addNewBtn.addClickListener(e -> editor.editEntry(new Entry("", "")));
 
         // Listen changes made by the editor, refresh data from backend
@@ -82,7 +82,7 @@ public class MainFormController extends UI {
         listEntries(null);
     }
 
-    // tag::listCustomers[]
+    // tag::listEntries[]
     private void listEntries(String text) {
         if (StringUtils.isEmpty(text)) {
             grid.setContainerDataSource(
@@ -92,5 +92,5 @@ public class MainFormController extends UI {
                     repo.findByDescriptionStartsWithIgnoreCase(text)));
         }
     }
-    // end::listCustomers[]
+    // end::listEntries[]
 }

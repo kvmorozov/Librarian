@@ -25,11 +25,11 @@ public class EntryEditor extends VerticalLayout {
     private final EntryRepository repository;
 
     /**
-     * The currently edited customer
+     * The currently edited entry
      */
     private Entry entry;
 
-    /* Fields to edit properties in Customer entity */
+    /* Fields to edit properties in Entry entity */
     TextField name = new TextField("Name");
     TextField description = new TextField("Description");
 

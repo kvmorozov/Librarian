@@ -47,23 +47,23 @@ public class MainApplication {
             repository.save(new Entry("David", "Palmer"));
             repository.save(new Entry("Michelle", "Dessler"));
 
-            // fetch all customers
-            log.info("Customers found with findAll():");
+            // fetch all entries
+            log.info("Entries found with findAll():");
             log.info("-------------------------------");
-            for (Entry customer : repository.findAll()) {
-                log.info(customer.toString());
+            for (Entry entry : repository.findAll()) {
+                log.info(entry.toString());
             }
             log.info("");
 
-            // fetch an individual customer by ID
-            Entry customer = repository.findOne(1L);
-            log.info("Customer found with findOne(1L):");
+            // fetch an individual entry by ID
+            Entry entry = repository.findOne(1L);
+            log.info("Entry found with findOne(1L):");
             log.info("--------------------------------");
-            log.info(customer.toString());
+            log.info(entry.toString());
             log.info("");
 
-            // fetch customers by last name
-            log.info("Customer found with findByLastNameStartsWithIgnoreCase('Bauer'):");
+            // fetch entries by last name
+            log.info("Entry found with findByDescriptionStartsWithIgnoreCase('Bauer'):");
             log.info("--------------------------------------------");
             for (Entry bauer : repository.findByDescriptionStartsWithIgnoreCase("Bauer")) {
                 log.info(bauer.toString());
