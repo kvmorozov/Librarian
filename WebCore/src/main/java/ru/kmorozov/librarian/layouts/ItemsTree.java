@@ -49,16 +49,32 @@ public class ItemsTree extends VerticalLayout {
         }
     }
 
+    private void addChildren(final Item root) {
+        for (Item child : root.getChildren()) {
+            itemsTree.addItem(child);
+            itemsTree.setParent(child, root);
+            itemsTree.setItemIcon(child, new StreamResource(new IconSource((ImageIcon) child.getIcon()), "tmp"));
+            itemsTree.setChildrenAllowed(child, child.hasChildren());
+        }
+
+        root.setLoaded(true);
+
+        itemsTree.containerItemSetChange(null);
+    }
+
     @Autowired
     public void populateTree(ItemsProvider itemsProvider) {
         Item root = itemsProvider.getRoot();
 
         itemsTree.addItem(root);
+        addChildren(root);
 
-        for (Item child : root.getChildren()) {
-            itemsTree.addItem(child);
-            itemsTree.setParent(child, root);
-            itemsTree.setItemIcon(child, new StreamResource(new IconSource((ImageIcon) child.getIcon()), "tmp"));
-        }
+        itemsTree.addExpandListener(event -> {
+            Item item = (Item) event.getItemId();
+            if (item.isLoaded())
+                return;
+            else
+                addChildren(item);
+        });
     }
 }

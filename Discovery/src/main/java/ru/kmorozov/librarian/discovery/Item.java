@@ -13,4 +13,7 @@ public interface Item {
     List<Item> getChildren();
     boolean hasChildren();
     Icon getIcon();
+
+    boolean isLoaded();
+    void setLoaded(boolean loadFlag);
 }

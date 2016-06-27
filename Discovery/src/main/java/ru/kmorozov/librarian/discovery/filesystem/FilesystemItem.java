@@ -1,7 +1,6 @@
 package ru.kmorozov.librarian.discovery.filesystem;
 
 import ru.kmorozov.librarian.discovery.Item;
-import sun.misc.Resource;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
@@ -17,6 +16,7 @@ public class FilesystemItem implements Item {
     private String name;
     private FilesystemItem parent;
     private File file;
+    private boolean loadFlag = false;
 
     public FilesystemItem(String name, FilesystemItem parent) {
         this.name = name;
@@ -63,5 +63,15 @@ public class FilesystemItem implements Item {
     @Override
     public String toString() {
         return name;
+    }
+
+    @Override
+    public boolean isLoaded() {
+        return loadFlag;
+    }
+
+    @Override
+    public void setLoaded(boolean loadFlag) {
+        this.loadFlag = loadFlag;
     }
 }
