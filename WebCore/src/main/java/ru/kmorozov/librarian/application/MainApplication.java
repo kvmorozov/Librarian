@@ -19,7 +19,8 @@ import java.util.Arrays;
  */
 
 @SpringBootApplication(scanBasePackages = "ru.kmorozov.librarian.controllers," +
-                                          "ru.kmorozov.librarian.persistence.config")
+                                          "ru.kmorozov.librarian.persistence.config," +
+                                          "ru.kmorozov.librarian.discovery.config")
 @EnableJpaRepositories(basePackageClasses = EntryRepository.class)
 public class MainApplication {
 

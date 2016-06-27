@@ -1,4 +1,4 @@
-package ru.kmorozov.librarian.controllers;
+package ru.kmorozov.librarian.layouts;
 
 import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.event.ShortcutAction;

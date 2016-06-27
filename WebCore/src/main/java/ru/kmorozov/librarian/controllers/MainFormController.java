@@ -8,6 +8,7 @@ import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
+import ru.kmorozov.librarian.layouts.EntryEditor;
 import ru.kmorozov.librarian.entities.Entry;
 import ru.kmorozov.librarian.repositories.EntryRepository;
 
@@ -15,7 +16,7 @@ import ru.kmorozov.librarian.repositories.EntryRepository;
  * Created by sbt-morozov-kv on 23.06.2016.
  */
 
-@SpringUI
+@SpringUI(path = "/testGrid")
 @Theme("valo")
 public class MainFormController extends UI {
 
