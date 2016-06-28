@@ -1,8 +1,8 @@
 package ru.kmorozov.librarian.layouts;
 
 import com.vaadin.server.StreamResource;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Tree;
-import com.vaadin.ui.VerticalLayout;
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.kmorozov.librarian.discovery.Item;
 import ru.kmorozov.librarian.discovery.ItemsProvider;
@@ -18,15 +18,17 @@ import java.io.InputStream;
 /**
  * Created by sbt-morozov-kv on 24.06.2016.
  */
-public class ItemsTree extends VerticalLayout {
+public class ItemsTree extends HorizontalLayout {
 
     private Tree itemsTree;
+    private DocumentViewer documentViewer;
 
     public ItemsTree() {
         setMargin(true);
         setSpacing(true);
 
         addComponent(itemsTree = new Tree());
+        addComponent(documentViewer = new DocumentViewer());
     }
 
     private class IconSource implements StreamResource.StreamSource {
@@ -75,6 +77,13 @@ public class ItemsTree extends VerticalLayout {
                 return;
             else
                 addChildren(item);
+        });
+
+        itemsTree.addItemClickListener(event -> {
+            Item item = (Item) event.getItemId();
+            if (!item.hasChildren()) {
+                documentViewer.setDocument(item);
+            }
         });
     }
 }

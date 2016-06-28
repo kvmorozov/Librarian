@@ -5,6 +5,9 @@ import ru.kmorozov.librarian.discovery.Item;
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,6 +61,20 @@ public class FilesystemItem implements Item {
     @Override
     public Icon getIcon() {
         return FileSystemView.getFileSystemView().getSystemIcon(file);
+    }
+
+    @Override
+    public InputStream getStream() {
+        try {
+            return new FileInputStream(file);
+        } catch (FileNotFoundException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public String getMIMEType() {
+        return "application/pdf";
     }
 
     @Override

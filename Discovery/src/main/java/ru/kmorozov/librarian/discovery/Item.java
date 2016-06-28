@@ -1,6 +1,7 @@
 package ru.kmorozov.librarian.discovery;
 
 import javax.swing.*;
+import java.io.InputStream;
 import java.util.List;
 
 /**
@@ -12,7 +13,10 @@ public interface Item {
     Item getParent();
     List<Item> getChildren();
     boolean hasChildren();
+
     Icon getIcon();
+    InputStream getStream();
+    String getMIMEType();
 
     boolean isLoaded();
     void setLoaded(boolean loadFlag);
