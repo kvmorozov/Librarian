@@ -7,6 +7,7 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.util.StringUtils;
 import ru.kmorozov.librarian.layouts.EntryEditor;
 import ru.kmorozov.librarian.entities.Entry;
@@ -18,6 +19,7 @@ import ru.kmorozov.librarian.repositories.EntryRepository;
 
 @SpringUI(path = "/testGrid")
 @Theme("valo")
+@ComponentScan(basePackages = "ru.kmorozov.librarian.layouts")
 public class MainFormController extends UI {
 
     private final EntryRepository repo;

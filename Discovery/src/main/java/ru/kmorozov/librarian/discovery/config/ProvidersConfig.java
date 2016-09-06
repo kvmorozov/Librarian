@@ -14,6 +14,6 @@ public class ProvidersConfig {
 
     @Bean
     public ItemsProvider itemsProvider() {
-        return new FilesystemItemsProvider("D:\\Документы");
+        return new FilesystemItemsProvider("C:\\Users\\sbt-morozov-kv\\Desktop\\Р”РѕРєСѓРјРµРЅС‚С‹");
     }
 }
