@@ -1,7 +1,7 @@
 package ru.kmorozov.librarian.discovery.filesystem;
 
-import ru.kmorozov.librarian.discovery.Item;
 import ru.kmorozov.librarian.discovery.ItemsProvider;
+import ru.kmorozov.librarian.interfaces.Item;
 
 /**
  * Created by sbt-morozov-kv on 24.06.2016.

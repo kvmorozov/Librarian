@@ -2,18 +2,17 @@ package ru.kmorozov.librarian.layouts;
 
 import com.vaadin.server.StreamResource;
 import com.vaadin.ui.Embedded;
-import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
-import ru.kmorozov.librarian.discovery.Item;
+import ru.kmorozov.librarian.interfaces.Document;
 
 /**
  * Created by sbt-morozov-kv on 27.06.2016.
  */
 public class DocumentViewer extends VerticalLayout {
 
-    private Item documentItem;
+    private Document documentItem;
 
-    public void setDocument(Item documentItem) {
+    public void setDocument(Document documentItem) {
         this.documentItem = documentItem;
 
         displayDocument();

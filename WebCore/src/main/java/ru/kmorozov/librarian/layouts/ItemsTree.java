@@ -4,8 +4,9 @@ import com.vaadin.server.StreamResource;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Tree;
 import org.springframework.beans.factory.annotation.Autowired;
-import ru.kmorozov.librarian.discovery.Item;
 import ru.kmorozov.librarian.discovery.ItemsProvider;
+import ru.kmorozov.librarian.interfaces.Document;
+import ru.kmorozov.librarian.interfaces.Item;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -82,7 +83,7 @@ public class ItemsTree extends HorizontalLayout {
         itemsTree.addItemClickListener(event -> {
             Item item = (Item) event.getItemId();
             if (!item.hasChildren()) {
-                documentViewer.setDocument(item);
+                documentViewer.setDocument((Document) item);
             }
         });
     }

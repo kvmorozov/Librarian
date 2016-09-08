@@ -1,6 +1,8 @@
 package ru.kmorozov.librarian.discovery.filesystem;
 
-import ru.kmorozov.librarian.discovery.Item;
+import ru.kmorozov.librarian.discovery.filesystem.utils.FileUtils;
+import ru.kmorozov.librarian.interfaces.Document;
+import ru.kmorozov.librarian.interfaces.Item;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
@@ -14,7 +16,7 @@ import java.util.List;
 /**
  * Created by sbt-morozov-kv on 24.06.2016.
  */
-public class FilesystemItem implements Item {
+public class FilesystemItem implements Document {
 
     private String name;
     private FilesystemItem parent;
@@ -90,5 +92,10 @@ public class FilesystemItem implements Item {
     @Override
     public void setLoaded(boolean loadFlag) {
         this.loadFlag = loadFlag;
+    }
+
+    @Override
+    public String getKey() {
+        return FileUtils.getHash(file);
     }
 }
