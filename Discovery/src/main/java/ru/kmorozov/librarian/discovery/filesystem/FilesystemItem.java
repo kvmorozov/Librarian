@@ -1,7 +1,7 @@
 package ru.kmorozov.librarian.discovery.filesystem;
 
-import ru.kmorozov.librarian.discovery.filesystem.utils.FileUtils;
 import ru.kmorozov.librarian.interfaces.Document;
+import ru.kmorozov.librarian.interfaces.DocumentMetadata;
 import ru.kmorozov.librarian.interfaces.Item;
 
 import javax.swing.*;
@@ -22,18 +22,23 @@ public class FilesystemItem implements Document {
     private FilesystemItem parent;
     private File file;
     private boolean loadFlag = false;
+    private FileMetadata metadata;
 
     public FilesystemItem(String name, FilesystemItem parent) {
         this.name = name;
         this.parent = parent;
 
         file = new File(name);
+
+        metadata = new FileMetadata(file);
     }
 
     private FilesystemItem(File file, FilesystemItem parent) {
         this.file = file;
         this.name = file.getName();
         this.parent = parent;
+
+        metadata = new FileMetadata(file);
     }
 
     public String getName() {
@@ -96,6 +101,11 @@ public class FilesystemItem implements Document {
 
     @Override
     public String getKey() {
-        return FileUtils.getHash(file);
+        return metadata.getKey();
+    }
+
+    @Override
+    public DocumentMetadata getMetadata() {
+        return metadata;
     }
 }

@@ -10,4 +10,6 @@ public interface Document extends Item {
     InputStream getStream();
 
     String getMIMEType();
+
+    DocumentMetadata getMetadata();
 }
