@@ -5,30 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.kmorozov.librarian</groupId>
-    <artifactId>DataModel</artifactId>
+    <artifactId>MetadataProvider</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>7.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-            <version>LATEST</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>LATEST</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>LATEST</version>
-        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -42,7 +22,7 @@
             <version>LATEST</version>
             <optional>true</optional>
         </dependency>
-
     </dependencies>
+
 
 </project>

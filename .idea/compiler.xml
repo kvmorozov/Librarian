@@ -24,12 +24,14 @@
         <processorPath useClasspath="true" />
         <module name="DataModel" />
         <module name="Discovery" />
+        <module name="MetadataProvider" />
         <module name="WebCore" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="DataModel" target="1.5" />
       <module name="Discovery" target="1.8" />
+      <module name="MetadataProvider" target="1.5" />
       <module name="WebCore" target="1.8" />
     </bytecodeTargetLevel>
   </component>

@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/Logic/pom.xml" />
         <option value="$PROJECT_DIR$/DataModel/pom.xml" />
         <option value="$PROJECT_DIR$/Discovery/pom.xml" />
+        <option value="$PROJECT_DIR$/MetadataProvider/pom.xml" />
       </list>
     </option>
   </component>

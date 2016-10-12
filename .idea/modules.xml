@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/DataModel/DataModel.iml" filepath="$PROJECT_DIR$/DataModel/DataModel.iml" />
       <module fileurl="file://$PROJECT_DIR$/Discovery/Discovery.iml" filepath="$PROJECT_DIR$/Discovery/Discovery.iml" />
       <module fileurl="file://$PROJECT_DIR$/Librarian.iml" filepath="$PROJECT_DIR$/Librarian.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MetadataProvider/MetadataProvider.iml" filepath="$PROJECT_DIR$/MetadataProvider/MetadataProvider.iml" />
       <module fileurl="file://$PROJECT_DIR$/WebCore/WebCore.iml" filepath="$PROJECT_DIR$/WebCore/WebCore.iml" />
     </modules>
   </component>
