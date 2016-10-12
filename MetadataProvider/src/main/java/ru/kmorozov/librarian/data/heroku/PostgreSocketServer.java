@@ -9,7 +9,7 @@ import java.net.Socket;
 /**
  * Created by sbt-morozov-kv on 12.10.2016.
  */
-public class PostgreConnectorServer {
+public class PostgreSocketServer {
 
     public static final int HEROKU_PORT = 2004;
 
