@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/Discovery/src/main/java/ru/kmorozov/librarian/discovery/config/ProvidersConfig.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MetadataProvider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/WebCore" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>

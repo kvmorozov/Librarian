@@ -1,5 +1,7 @@
 package ru.kmorozov.librarian.persistence.config;
 
+import org.apache.zookeeper.ZooKeeper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
@@ -18,10 +20,13 @@ import javax.sql.DataSource;
 @Configuration
 public class LocalH2Config {
 
+    @Autowired
+    private ZooKeeper zooClient;
+
     @Bean
     public DataSource dataSource() {
         EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-        return builder.setType(EmbeddedDatabaseType.H2).build();
+        return new DistributedDataSource(builder.setType(EmbeddedDatabaseType.H2).build(), zooClient);
     }
 
     @Bean
